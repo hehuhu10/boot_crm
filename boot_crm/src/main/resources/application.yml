@@ -1,0 +1,35 @@
+spring:
+  datasource:
+    username: root
+    password: 1399220
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://39.101.151.59:3306/boot_crm?characterEncoding=utf-8&serverTimezone=UTC&useSSL=false
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      initial-size: 5
+      min-idle: 5
+      max-active: 20
+      test-while-idle: true
+      test-on-borrow: false
+      test-on-return: false
+      pool-prepared-statements: true
+      max-pool-prepared-statement-per-connection-size: 20
+      max-wait: 60000
+      time-between-eviction-runs-millis: 60000
+      min-evictable-idle-time-millis: 30000
+      filters: stat
+      async-init: true
+  jackson:
+    date-format: yyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+  mvc:
+    hiddenmethod:
+      filter:
+        enabled: true
+  banner:
+    location: classpath:banner.txt
+    charset: utf-8
+
+mybatis:
+  config-location: classpath:mybatis/mybatis-config.xml
+  mapper-locations: classpath:mybatis/mapper/*.xml
